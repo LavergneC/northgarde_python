@@ -11,4 +11,11 @@ class Tile:
             return False
         
         self._slots_used += 1
-        self._buildings += building
+        self._buildings.append(building)
+
+    def __str__(self) -> str:
+        output = ''
+        for building in self._buildings:
+            output += str(building) + '\n'
+
+        return output
