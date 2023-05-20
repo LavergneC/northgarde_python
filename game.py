@@ -23,9 +23,10 @@ class Game:
 
     def first_strategie(self):
         scout_camp = Building(name="Scout camp", max_villagers=2)
-        dock = Building(name='Shipyard', income=Income(Income_type.GOLD, 5), max_villagers=2)
-        
-        print("Asign 2 villger to dock", self.assign_villager(building=dock, villager_count=2))
+
+        gold_income = Income(Income_type.GOLD, income_per_villager=5)
+        dock = Building(name='Shipyard', income=gold_income, max_villagers=2)
+        self.assign_villager(building=dock, villager_count=2)
 
         self._tiles[0].add_building(scout_camp)
         self._tiles[0].add_building(dock)
